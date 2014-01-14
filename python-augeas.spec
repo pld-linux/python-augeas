@@ -1,18 +1,21 @@
 #
 # Conditional build:
 %bcond_without	python2 # CPython 2.x module
-%bcond_with	python3 # CPython 3.x module
+%bcond_without	python3 # CPython 3.x module
 
 %define 	module	augeas
 Summary:	Python bindings to augeas
 Summary(pl.UTF-8):	Wiązania Pythona do augeasa
 Name:		python-%{module}
 Version:	0.4.1
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		Libraries/Python
 Source0:	https://fedorahosted.org/released/python-augeas/%{name}-%{version}.tar.gz
 # Source0-md5:	cf5742a6e84c1cc894cedd1984aaa915
+# diff against https://github.com/hercules-team/python-augeas
+Patch0:		python3.patch
+# Patch0-md5:	528f405cd6a37035490216e4d0541e46
 URL:		http://augeas.net/
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
@@ -47,6 +50,7 @@ Czysto pythonowe wiązania do augeasa.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %if %{with python2}
@@ -95,5 +99,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS README.txt
 %{py3_sitescriptdir}/augeas.py
+%{py3_sitescriptdir}/__pycache__/augeas.cpython-*.py[co]
 %{py3_sitescriptdir}/python_augeas-%{version}-py*.egg-info
 %endif

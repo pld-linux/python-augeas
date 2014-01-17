@@ -4,8 +4,8 @@
 %bcond_without	python3 # CPython 3.x module
 
 %define 	module	augeas
-Summary:	Python bindings to augeas
-Summary(pl.UTF-8):	Wiązania Pythona do augeasa
+Summary:	Python 2.x bindings to augeas
+Summary(pl.UTF-8):	Wiązania Pythona 2.x do augeasa
 Name:		python-%{module}
 Version:	0.4.1
 Release:	2
@@ -32,21 +32,21 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Pure Python bindings to augeas.
+Pure Python bindings to augeas, built for Python 2.x.
 
 %description -l pl.UTF-8
-Czysto pythonowe wiązania do augeasa.
+Czysto pythonowe wiązania do augeasa, zbudowane dla Pythona 2.x.
 
 %package -n python3-%{module}
-Summary:	Python bindings to augeas
-Summary(pl.UTF-8):	Wiązania Pythona do augeasa
+Summary:	Python 3.x bindings to augeas
+Summary(pl.UTF-8):	Wiązania Pythona 3.x do augeasa
 Group:		Libraries/Python
 
 %description -n python3-%{module}
-Pure Python bindings to augeas.
+Pure Python bindings to augeas, built for Python 3.x.
 
 %description -n python3-%{module} -l pl.UTF-8
-Czysto pythonowe wiązania do augeasa.
+Czysto pythonowe wiązania do augeasa, zbudowane dla Pythona 3.x.
 
 %prep
 %setup -q

@@ -7,15 +7,12 @@
 Summary:	Python 2.x bindings to augeas
 Summary(pl.UTF-8):	Wiązania Pythona 2.x do augeasa
 Name:		python-%{module}
-Version:	0.4.1
-Release:	2
+Version:	0.5.0
+Release:	1
 License:	LGPL v2.1+
 Group:		Libraries/Python
 Source0:	https://fedorahosted.org/released/python-augeas/%{name}-%{version}.tar.gz
-# Source0-md5:	cf5742a6e84c1cc894cedd1984aaa915
-# diff against https://github.com/hercules-team/python-augeas
-Patch0:		python3.patch
-# Patch0-md5:	528f405cd6a37035490216e4d0541e46
+# Source0-md5:	2d5a903467410b8d60abca5fa54bae2d
 URL:		http://augeas.net/
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
@@ -50,7 +47,6 @@ Czysto pythonowe wiązania do augeasa, zbudowane dla Pythona 3.x.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %if %{with python2}

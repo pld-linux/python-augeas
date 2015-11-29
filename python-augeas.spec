@@ -15,7 +15,7 @@ Source0:	https://fedorahosted.org/released/python-augeas/%{name}-%{version}.tar.
 # Source0-md5:	2d5a903467410b8d60abca5fa54bae2d
 URL:		http://augeas.net/
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.219
+BuildRequires:	rpmbuild(macros) >= 1.710
 %if %{with python2}
 BuildRequires:	python-devel
 %endif

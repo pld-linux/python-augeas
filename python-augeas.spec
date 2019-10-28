@@ -8,7 +8,7 @@ Summary:	Python 2.x bindings to augeas
 Summary(pl.UTF-8):	Wiązania Pythona 2.x do augeasa
 Name:		python-%{module}
 Version:	0.5.0
-Release:	7
+Release:	8
 License:	LGPL v2.1+
 Group:		Libraries/Python
 Source0:	https://fedorahosted.org/released/python-augeas/%{name}-%{version}.tar.gz
